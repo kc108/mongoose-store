@@ -15,7 +15,7 @@ const { log } = require("mercedlogger")
 const methodOverride = require("method-override")
 const morgan = require("morgan")
 const cors = require("cors")
-const indexRouter = require("./routes")
+const productsRouter = require("./routes/products")
 
 // GET PORT FROM ENV OR DEFAULT PORT (|| means if not use default port)
 const PORT = process.env.PORT || "2021"
@@ -50,7 +50,7 @@ app.use(express.urlencoded({ extended: false })) //parse bodies from form submis
 // })
 
 // bring in index router
-app.use("/", indexRouter)
+app.use("/", productsRouter)
 
 /////////////////////////////////////
 // App Listener

@@ -1,6 +1,6 @@
 // create our new router
 const router = require("express").Router()
-const ProductController = require("../controllers/index")
+const ProductController = require("../controllers/products")
 
 console.log(ProductController)
 

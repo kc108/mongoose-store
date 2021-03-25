@@ -13,7 +13,7 @@ const index = async (req, res) => {
 
     const products = await Product.find({})
 
-    res.render("index", {
+    res.render("products/index", {
         products
     });
 }
