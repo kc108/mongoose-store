@@ -21,6 +21,8 @@ router.get("/new", ProductController.new)
 router.post("/", ProductController.create)
 router.get("/:id/edit", ProductController.edit)
 
+// Router Update
+router.put("/:id", ProductController.update)
 
 // router for show '/products/:id'
 router.get("/:id", ProductController.show)

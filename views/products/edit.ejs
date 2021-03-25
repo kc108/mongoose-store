@@ -8,7 +8,7 @@
     <title>Add New Product</title>
 </head>
 <body>
-    <form action="/products" method="POST">
+    <form action="/products/<%= product._id %>?_method=PUT" method="POST">
         <input type="text" placeholder="product name" name="name" value="<%= product.name %>">
         <input type="text" placeholder="img" name="img" value="<%= product.img %>">
         <input type="text" placeholder="price" name="price" value="<%= product.price %>">
