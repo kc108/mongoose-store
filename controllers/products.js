@@ -26,8 +26,11 @@ const show = async(req, res) => {
     }); 
 }
 
-// // New PRODUCT page
-// const newTodo = async(req, res) => {
+// New Product Page
+const newProduct = async(req, res) => {
+    res.render("products/new")
+}
+
 
 //     // Retrieve List, so user can select which list to add todo to
 //     const lists = await List.find({})
@@ -72,8 +75,8 @@ const show = async(req, res) => {
 //////////////////////////////
 module.exports = {
     index, 
-    show
-    // new: newTodo,
+    show,
+    new: newProduct,
     // create, 
     // destroy
 }

@@ -14,6 +14,9 @@ console.log(ProductController)
 ////////////////////////////////
 router.get("/", ProductController.index)
 
+// Router New
+router.get("/new", ProductController.new)
+
 // router for show '/products/:id'
 router.get("/:id", ProductController.show)
 
