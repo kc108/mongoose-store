@@ -24,6 +24,9 @@ router.get("/:id/edit", ProductController.edit)
 // Router Update
 router.put("/:id", ProductController.update)
 
+// Router Patch
+router.patch("/:id", ProductController.buy)
+
 // router for show '/products/:id'
 router.get("/:id", ProductController.show)
 

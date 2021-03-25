@@ -14,6 +14,11 @@
     <div>$<%= product.price %></div>
     <div>Quantity: <%= product.qty %></div>
     <p>Description: <%= product.description %></p>
+    
+    <form action="/products/<%= product._id %>?_method=PATCH" method="POST">
+        <input type="submit" value="buy">
+    </form>
+    
     <a href="/products/<%= product._id %>/edit"><button>Edit Product</button></a>
     <a href="/products"><button>Back to Products</button></a>
 </body>

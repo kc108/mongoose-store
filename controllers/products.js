@@ -65,7 +65,23 @@ const update = async (req, res) => {
         res.json(error);
     }
 };
-    
+
+// buy 
+const buy = async (req, res) => {
+    // try block to catch any errors
+    try {
+        const product = await Product.findById(req.params.id);
+        if(product.qty >= 1) {
+            product.qty -= 1;
+        }
+        await product.save();
+        //redirect back to main todos page
+        res.redirect("/products");
+    } catch (error) {
+        // send error as json if there is one
+        res.json(error);
+    }
+};
 
 
 //     // Retrieve List, so user can select which list to add todo to
@@ -95,6 +111,7 @@ module.exports = {
     new: newProduct,
     create, 
     edit, 
-    update
+    update, 
+    buy
     // destroy
 }
