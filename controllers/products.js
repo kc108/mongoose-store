@@ -31,6 +31,19 @@ const newProduct = async(req, res) => {
     res.render("products/new")
 }
 
+// Create New Product 
+const create = async (req, res) => {
+    // try block to catch any errors
+    try {
+      // create the new todo using the request body
+      const product = await Product.create(req.body);
+      //redirect back to main todos page
+      res.redirect("/products");
+    } catch (error) {
+      // send error as json if there is one
+      res.json(error);
+    }
+  };
 
 //     // Retrieve List, so user can select which list to add todo to
 //     const lists = await List.find({})
@@ -38,27 +51,7 @@ const newProduct = async(req, res) => {
 //     res.render("todo/new", {lists});
 // };
 
-// // New Todo Page
-// const create = async (req, res) => {
-//     // try block to catch any errors
-//     try {
-//       // get the target list
-//       const list = await List.findById(req.body.list);
-//       // replace list string with list id object
-//       req.body.list = list;
-//       // create the new todo using the request body
-//       const todo = await Todo.create(req.body);
-//       // add the todo to lists todos array
-//       list.todos.push(todo)
-//       // save changes
-//       list.save()
-//       //redirect back to main todos page
-//       res.redirect("/todos");
-//     } catch (error) {
-//       // send error as json if there is one
-//       res.json(error);
-//     }
-//   };
+
 
 //   // destroy to delete a todo
 //   const destroy = async (req, res) => {
@@ -77,6 +70,6 @@ module.exports = {
     index, 
     show,
     new: newProduct,
-    // create, 
+    create, 
     // destroy
 }

@@ -17,6 +17,9 @@ router.get("/", ProductController.index)
 // Router New
 router.get("/new", ProductController.new)
 
+// Router Create
+router.post("/", ProductController.create)
+
 // router for show '/products/:id'
 router.get("/:id", ProductController.show)
 
