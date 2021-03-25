@@ -13,11 +13,11 @@
     <main>
         <% for (product of products) { %>
             <div class="product-card">
-                <img src="<%= product.img %>" alt="" />
-                <span><%= product.name %></span>
-                <span>Price</span>
-                <span>Quantity</span>
-                <p>Description</p>
+                <a href="/products/<%= product._id %>"><img class="product-img" src="<%= product.img %>" alt="" /></a>
+                <div><%= product.name %></div>
+                <div>$<%= product.price %></div>
+                <p>Description:<%= product.description %></p>
+                <div>Quantity:<%= product.qty %></div>
             </div>
         <% } %>
     </main>

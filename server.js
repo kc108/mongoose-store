@@ -49,8 +49,13 @@ app.use(express.urlencoded({ extended: false })) //parse bodies from form submis
 //   res.send("<h1>Hello World</h1>")
 // })
 
+// redirect to index
+app.get("/", (req, res) => {
+  res.redirect("/products")
+})
+
 // bring in index router
-app.use("/", productsRouter)
+app.use("/products", productsRouter)
 
 /////////////////////////////////////
 // App Listener

@@ -12,8 +12,10 @@ console.log(ProductController)
 ////////////////////////////////
 // Router Specific Routes
 ////////////////////////////////
-//
 router.get("/", ProductController.index)
+
+// router for show '/products/:id'
+router.get("/:id", ProductController.show)
 
 ////////////////////////////////
 // Export the Router

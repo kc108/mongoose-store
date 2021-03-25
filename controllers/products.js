@@ -18,6 +18,14 @@ const index = async (req, res) => {
     });
 }
 
+// show
+const show = async(req, res) => {
+    const product = await Product.findById(req.params.id);
+    res.render("products/show", {
+        product
+    }); 
+}
+
 // // New PRODUCT page
 // const newTodo = async(req, res) => {
 
@@ -64,6 +72,7 @@ const index = async (req, res) => {
 //////////////////////////////
 module.exports = {
     index, 
+    show
     // new: newTodo,
     // create, 
     // destroy
