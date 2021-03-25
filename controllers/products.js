@@ -45,6 +45,13 @@ const create = async (req, res) => {
     }
   };
 
+const edit = async (req, res) => {
+    const product = await Product.findById(req.params.id);
+    res.render("products/edit", {
+        product
+    });
+}
+
 //     // Retrieve List, so user can select which list to add todo to
 //     const lists = await List.find({})
 //     // render todo/new.ejs with the lists
@@ -71,5 +78,6 @@ module.exports = {
     show,
     new: newProduct,
     create, 
+    edit
     // destroy
 }
