@@ -18,6 +18,16 @@ const index = async (req, res) => {
     });
 }
 
+// delete
+const destroy = async (req, res) => {
+    //save the param in a variable
+    const id = req.params.id;
+    //delete the todo
+    await Product.findByIdAndDelete(id)
+    // redirect back to main page
+    res.redirect("/products")
+}
+
 // show
 const show = async(req, res) => {
     const product = await Product.findById(req.params.id);
@@ -94,6 +104,6 @@ module.exports = {
     create, 
     edit, 
     update, 
-    buy
-    // destroy
+    buy,
+    destroy
 }
