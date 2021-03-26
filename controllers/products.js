@@ -84,24 +84,6 @@ const buy = async (req, res) => {
 };
 
 
-//     // Retrieve List, so user can select which list to add todo to
-//     const lists = await List.find({})
-//     // render todo/new.ejs with the lists
-//     res.render("todo/new", {lists});
-// };
-
-
-
-//   // destroy to delete a todo
-//   const destroy = async (req, res) => {
-//     // save the param in a variable
-//     const id = req.params.id
-//     // delete the todo
-//     await Todo.findByIdAndDelete(id)
-//     // redirect back to main page
-//     res.redirect("/todos")
-// }
-
 //////////////////////////////
 // Export Controller
 //////////////////////////////
