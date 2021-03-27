@@ -28,7 +28,7 @@ router.put("/:id", ProductController.update)
 router.patch("/:id", ProductController.buy)
 
 // Route for destroy
-//router.delete("/:id", ProductController.destroy)
+router.delete("/:id", ProductController.destroy)
 
 // router for show '/products/:id'
 router.get("/:id", ProductController.show)
