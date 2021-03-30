@@ -2,7 +2,7 @@
 // Import Models
 ////////////////////////
 const Product = require("../models/Product")
-
+const User = require("../models/User")
 
 ///////////////////////////
 // Controller Functions
@@ -85,6 +85,12 @@ const buy = async (req, res) => {
             product.qty -= 1;
         }
         await product.save();
+
+        // Add product to user
+        const user = await User.findOne({ username: "Kim" })
+        user.shopping_cart.push(product);
+        await user.save();
+
         //redirect back to main todos page
         res.redirect("/products");
     } catch (error) {
@@ -92,6 +98,11 @@ const buy = async (req, res) => {
         res.json(error);
     }
 };
+
+async function userShow() {
+    const user = await User.findOne({ username: "Kim" })
+    res.render("user/show", { user })
+}
 
 
 //////////////////////////////
